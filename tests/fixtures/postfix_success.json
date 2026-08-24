@@ -1,0 +1,39 @@
+{
+  "run_id": "fx-postfix-success",
+  "schema_version": "1.0",
+  "metadata": {"agent": "code_assistant", "environment": "local"},
+  "events": [
+    {
+      "event_id": "e1",
+      "event_type": "model_call",
+      "data": {"prompt": "Divide 100 by 5 safely"},
+      "timestamp": "2026-08-19T10:05:00Z"
+    },
+    {
+      "event_id": "e2",
+      "event_type": "tool_call",
+      "data": {
+        "tool_name": "python_calculator",
+        "call_id": "call_calc_001",
+        "tool_input": {"expression": "100 / 5"}
+      },
+      "timestamp": "2026-08-19T10:05:01Z"
+    },
+    {
+      "event_id": "e3",
+      "event_type": "tool_result",
+      "data": {
+        "call_id": "call_calc_001",
+        "status": "success",
+        "output": 20
+      },
+      "timestamp": "2026-08-19T10:05:02Z"
+    },
+    {
+      "event_id": "e4",
+      "event_type": "final_result",
+      "data": {"output": "100 divided by 5 is 20."},
+      "timestamp": "2026-08-19T10:05:03Z"
+    }
+  ]
+}

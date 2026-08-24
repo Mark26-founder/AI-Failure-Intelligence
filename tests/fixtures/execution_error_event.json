@@ -1,0 +1,22 @@
+{
+  "run_id": "fx-execution-error-event",
+  "schema_version": "1.0",
+  "metadata": {"agent": "orchestrator", "environment": "cloud_worker"},
+  "events": [
+    {
+      "event_id": "e1",
+      "event_type": "model_call",
+      "data": {"prompt": "Fetch external report API"},
+      "timestamp": "2026-08-19T10:00:00Z"
+    },
+    {
+      "event_id": "e2",
+      "event_type": "error",
+      "data": {
+        "error_type": "ConnectionTimeoutError",
+        "message": "HTTP request to https://api.reports.internal timed out after 30000ms"
+      },
+      "timestamp": "2026-08-19T10:00:30Z"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "run_id": "fx-unresolved-tool-call",
+  "schema_version": "1.0",
+  "metadata": {"agent": "async_task_agent"},
+  "events": [
+    {
+      "event_id": "e1",
+      "event_type": "model_call",
+      "data": {"prompt": "Start background export task"},
+      "timestamp": "2026-08-19T10:00:00Z"
+    },
+    {
+      "event_id": "e2",
+      "event_type": "tool_call",
+      "data": {
+        "tool_name": "start_async_job",
+        "call_id": "call_async_99",
+        "tool_input": {"job_type": "pdf_export"}
+      },
+      "timestamp": "2026-08-19T10:00:01Z"
+    }
+  ]
+}

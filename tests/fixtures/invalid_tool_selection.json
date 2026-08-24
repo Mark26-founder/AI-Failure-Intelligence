@@ -1,0 +1,36 @@
+{
+  "run_id": "fx-invalid-tool-selection",
+  "schema_version": "1.0",
+  "metadata": {"agent": "legacy_agent"},
+  "events": [
+    {
+      "event_id": "e1",
+      "event_type": "model_call",
+      "data": {"prompt": "Run database query using legacy tool"},
+      "timestamp": "2026-08-19T10:00:00Z"
+    },
+    {
+      "event_id": "e2",
+      "event_type": "tool_call",
+      "data": {
+        "tool_name": "deprecated_db_query",
+        "call_id": "call_db_001",
+        "is_valid": false,
+        "error_type": "invalid_tool",
+        "tool_input": {"sql": "SELECT * FROM users"}
+      },
+      "timestamp": "2026-08-19T10:00:01Z"
+    },
+    {
+      "event_id": "e3",
+      "event_type": "tool_result",
+      "data": {
+        "call_id": "call_db_001",
+        "status": "error",
+        "is_error": true,
+        "error": "Tool 'deprecated_db_query' is invalid or unsupported"
+      },
+      "timestamp": "2026-08-19T10:00:02Z"
+    }
+  ]
+}

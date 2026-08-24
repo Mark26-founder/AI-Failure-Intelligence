@@ -1,0 +1,34 @@
+{
+  "run_id": "fx-tool-execution-failure",
+  "schema_version": "1.0",
+  "metadata": {"agent": "code_assistant", "environment": "local"},
+  "events": [
+    {
+      "event_id": "e1",
+      "event_type": "model_call",
+      "data": {"prompt": "Divide 100 by 0 to calculate ratio"},
+      "timestamp": "2026-08-19T10:00:00Z"
+    },
+    {
+      "event_id": "e2",
+      "event_type": "tool_call",
+      "data": {
+        "tool_name": "python_calculator",
+        "call_id": "call_calc_001",
+        "tool_input": {"expression": "100 / 0"}
+      },
+      "timestamp": "2026-08-19T10:00:01Z"
+    },
+    {
+      "event_id": "e3",
+      "event_type": "tool_result",
+      "data": {
+        "call_id": "call_calc_001",
+        "status": "error",
+        "is_error": true,
+        "error": "ZeroDivisionError: division by zero"
+      },
+      "timestamp": "2026-08-19T10:00:02Z"
+    }
+  ]
+}

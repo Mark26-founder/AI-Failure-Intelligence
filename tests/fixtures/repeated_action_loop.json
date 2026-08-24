@@ -1,0 +1,61 @@
+{
+  "run_id": "fx-repeated-action-loop",
+  "schema_version": "1.0",
+  "metadata": {"agent": "file_searcher", "environment": "local"},
+  "events": [
+    {
+      "event_id": "e1",
+      "event_type": "model_call",
+      "data": {"prompt": "Locate database config file"},
+      "timestamp": "2026-08-19T10:00:00Z"
+    },
+    {
+      "event_id": "e2",
+      "event_type": "tool_call",
+      "data": {
+        "tool_name": "search_dir",
+        "call_id": "c1",
+        "tool_input": {"path": "/etc/config", "pattern": "*.env"}
+      },
+      "timestamp": "2026-08-19T10:00:01Z"
+    },
+    {
+      "event_id": "e3",
+      "event_type": "tool_result",
+      "data": {"call_id": "c1", "status": "success", "output": []},
+      "timestamp": "2026-08-19T10:00:02Z"
+    },
+    {
+      "event_id": "e4",
+      "event_type": "tool_call",
+      "data": {
+        "tool_name": "search_dir",
+        "call_id": "c2",
+        "tool_input": {"path": "/etc/config", "pattern": "*.env"}
+      },
+      "timestamp": "2026-08-19T10:00:03Z"
+    },
+    {
+      "event_id": "e5",
+      "event_type": "tool_result",
+      "data": {"call_id": "c2", "status": "success", "output": []},
+      "timestamp": "2026-08-19T10:00:04Z"
+    },
+    {
+      "event_id": "e6",
+      "event_type": "tool_call",
+      "data": {
+        "tool_name": "search_dir",
+        "call_id": "c3",
+        "tool_input": {"path": "/etc/config", "pattern": "*.env"}
+      },
+      "timestamp": "2026-08-19T10:00:05Z"
+    },
+    {
+      "event_id": "e7",
+      "event_type": "tool_result",
+      "data": {"call_id": "c3", "status": "success", "output": []},
+      "timestamp": "2026-08-19T10:00:06Z"
+    }
+  ]
+}
