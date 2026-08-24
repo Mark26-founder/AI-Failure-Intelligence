@@ -1,0 +1,39 @@
+{
+  "run_id": "fx-clean-success",
+  "schema_version": "1.0",
+  "metadata": {"agent": "assistant_v2"},
+  "events": [
+    {
+      "event_id": "e1",
+      "event_type": "model_call",
+      "data": {"prompt": "What is 15 + 27?"},
+      "timestamp": "2026-08-19T10:00:00Z"
+    },
+    {
+      "event_id": "e2",
+      "event_type": "tool_call",
+      "data": {
+        "tool_name": "python_calculator",
+        "call_id": "call_calc_002",
+        "tool_input": {"expression": "15 + 27"}
+      },
+      "timestamp": "2026-08-19T10:00:01Z"
+    },
+    {
+      "event_id": "e3",
+      "event_type": "tool_result",
+      "data": {
+        "call_id": "call_calc_002",
+        "status": "success",
+        "output": 42
+      },
+      "timestamp": "2026-08-19T10:00:02Z"
+    },
+    {
+      "event_id": "e4",
+      "event_type": "final_result",
+      "data": {"output": "15 + 27 is 42."},
+      "timestamp": "2026-08-19T10:00:03Z"
+    }
+  ]
+}
